@@ -45,15 +45,6 @@ export class HttpRequest {
     return this.GetResponse(response);
   }
 
-  public async PostForm<T>(request: string, form: FormData): Promise<IHttpResponse<T>> {
-    let headers = {
-      method: RequestMethod.POST,
-      body: form,
-    };
-    const response = await fetch(request, headers);
-    return this.GetResponse(response);
-  }
-
   public async Put<T>(request: string, object: any): Promise<IHttpResponse<T>> {
     let headers = {
       ...defaultHeader,
@@ -73,20 +64,6 @@ export class HttpRequest {
     const response = await fetch(request, headers);
     const body = await response.json();
     return body;
-  }
-
-  public async Download(request: string, fileName: string): Promise<void> {
-    let headers = {
-      ...defaultHeader,
-      method: RequestMethod.GET,
-    };
-    const response = await fetch(request, headers);
-    const data = await response.blob();
-    let csvURL = window.URL.createObjectURL(data);
-    let tempLink = document.createElement('a');
-    tempLink.href = csvURL;
-    tempLink.setAttribute('download', fileName);
-    tempLink.click();
   }
 
   private async GetResponse<T>(response: Response): Promise<IHttpResponse<T>> {
