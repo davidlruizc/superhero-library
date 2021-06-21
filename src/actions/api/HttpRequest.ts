@@ -1,6 +1,6 @@
 declare interface IAPIresponse<T> {
-  message: string;
-  data: T;
+  response: string;
+  results: T;
 }
 
 enum RequestMethod {
@@ -35,44 +35,13 @@ export class HttpRequest {
     return this.GetResponse(response);
   }
 
-  public async Post<T>(request: string, object: any): Promise<IHttpResponse<T>> {
-    let headers = {
-      ...defaultHeader,
-      method: RequestMethod.POST,
-      body: JSON.stringify(object),
-    };
-    const response = await fetch(request, headers);
-    return this.GetResponse(response);
-  }
-
-  public async Put<T>(request: string, object: any): Promise<IHttpResponse<T>> {
-    let headers = {
-      ...defaultHeader,
-      method: RequestMethod.PUT,
-      body: JSON.stringify(object),
-    };
-    const response = await fetch(request, headers);
-    const body = await response.json();
-    return body;
-  }
-  public async Delete<T>(request: string, object: any): Promise<IHttpResponse<T>> {
-    let headers = {
-      ...defaultHeader,
-      method: RequestMethod.DELETE,
-      body: JSON.stringify(object),
-    };
-    const response = await fetch(request, headers);
-    const body = await response.json();
-    return body;
-  }
-
   private async GetResponse<T>(response: Response): Promise<IHttpResponse<T>> {
     if (response.status === 200) {
       const apiData: IAPIresponse<T> = await response.json();
       return {
         okay: true,
-        message: apiData.message,
-        data: apiData.data,
+        message: apiData.response,
+        data: apiData.results,
       };
     } else {
       return {
