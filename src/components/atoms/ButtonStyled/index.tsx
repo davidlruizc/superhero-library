@@ -16,7 +16,7 @@ const ButtonStyled: React.FC<ButtonStyledProps> = ({ text, icon, ...props }) => 
             <i className={icon} />
           </IconWrapper>
         )}
-        <ButtonText>{text}</ButtonText>
+        <ButtonText icon={icon}>{text}</ButtonText>
       </ContentWrapper>
     </CustomButton>
   );

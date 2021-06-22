@@ -12,7 +12,7 @@ const Filter: React.FC = () => {
       <MainWrapper>
         <Title>Filter</Title>
         <Text>Organize your favorite characters as you wish</Text>
-        <ButtonStyled onClick={toggle} text="Filters" />
+        <ButtonStyled onClick={toggle} text="Filters" icon="fa fa-filter" />
       </MainWrapper>
       <Collapse isOpen={isOpen}>
         <Card>
