@@ -1,6 +1,7 @@
 import { BACKGROUND_CARD, ON_BACKGROUND_COLOR, SECONDARY_COLOR } from 'assets/styles/colors';
 import { Card, Container } from 'reactstrap';
 import styled from 'styled-components';
+import { device } from 'utils/responsiveTemplate';
 
 export const HeaderContainer = styled(Container)`
   text-align: center;
@@ -20,6 +21,14 @@ export const TitleHeader = styled.h1`
 
 export const CardSearch = styled(Card)`
   background-color: ${BACKGROUND_CARD};
+`;
+
+export const SearchMain = styled.div`
+  padding-left: 3rem !important;
+
+  @media ${device.mobile} {
+    padding-left: 0 !important;
+  }
 `;
 
 export const SearchWrapper = styled.div`

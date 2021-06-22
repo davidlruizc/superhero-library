@@ -6,6 +6,7 @@ import {
   SearchIcon,
   SearchIconAnchor,
   SearchInput,
+  SearchMain,
   SearchWrapper,
   TitleHeader,
 } from './styles';
@@ -17,14 +18,14 @@ const Header: React.FC = () => {
       <ImageHeader src={ComicImage} />
       <TitleHeader>SUPERHERO LIBRARY</TitleHeader>
       <CardSearch className="p-4 ">
-        <div className="d-flex justify-content-center px-5">
+        <SearchMain className="d-flex justify-content-center">
           <SearchWrapper>
             <SearchInput type="text" placeholder="Search..." name="" />
             <SearchIconAnchor>
               <SearchIcon className="fa fa-search" />
             </SearchIconAnchor>
           </SearchWrapper>
-        </div>
+        </SearchMain>
       </CardSearch>
     </HeaderContainer>
   );
