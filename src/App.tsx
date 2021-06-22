@@ -1,18 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { SearchName } from 'actions/api/SearchNameActions';
 
 function App() {
-  const a = React.useCallback(async () => {
-    const asd = await SearchName('batman');
-    console.log(asd);
-  }, []);
-
-  React.useEffect(() => {
-    a();
-  }, [a]);
-
   return (
     <div className="App">
       <header className="App-header">
