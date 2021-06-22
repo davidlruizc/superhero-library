@@ -1,10 +1,11 @@
 import { baseURL, superheroURLs } from 'actions/URLs';
 import { HttpRequest } from './HttpRequest';
 
-export const Powerstats = async (id: string) => {
+export const Powerstats = async (id: string): Promise<IPowerstatsResponse | undefined> => {
   try {
-    //TODO: Get interface response
-    const request = await new HttpRequest().Get<any>(`${baseURL}/${id}${superheroURLs.powerstats}`);
+    const request = await new HttpRequest().Get<IPowerstatsResponse>(
+      `${baseURL}/${id}${superheroURLs.powerstats}`
+    );
     if (request.okay && request.data !== null) {
       return request.data;
     }
@@ -13,10 +14,11 @@ export const Powerstats = async (id: string) => {
   }
 };
 
-export const Appearance = async (id: string) => {
+export const Appearance = async (id: string): Promise<IAppearanceResponse | undefined> => {
   try {
-    //TODO: Get interface response
-    const request = await new HttpRequest().Get<any>(`${baseURL}/${id}${superheroURLs.appearance}`);
+    const request = await new HttpRequest().Get<IAppearanceResponse>(
+      `${baseURL}/${id}${superheroURLs.appearance}`
+    );
     if (request.okay && request.data !== null) {
       return request.data;
     }
