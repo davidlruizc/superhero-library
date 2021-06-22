@@ -46,7 +46,7 @@ const ModalHero: React.FC<ModalHeroProps> = ({ modal, toggle }) => {
       </ModalBody>
       <ModalFooter>
         <Button color="secondary" onClick={toggle}>
-          Cancel
+          Close
         </Button>
       </ModalFooter>
     </ModalHeroContainer>
