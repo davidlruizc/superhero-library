@@ -5,4 +5,6 @@ export const baseURL = `${REACT_APP_PROXY}${REACT_APP_API}${REACT_APP_ACCESS_TOK
 
 export const superheroURLs = {
   searchName: `${baseURL}/search/`,
+  powerstats: `/powerstats`,
+  appearance: '/appearance',
 };
