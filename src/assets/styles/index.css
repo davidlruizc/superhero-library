@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  padding-right: 0px !important;
+  overflow: auto !important;
+  font-family: Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f5f7 !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 4px rgba(172, 172, 172, 0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(172, 172, 172, 0.8);
+  -webkit-box-shadow: inset 0 0 4px rgba(172, 172, 172, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(172, 172, 172, 0.8);
+}
+
+/* React Autoduggest */
+
+.react-autosuggest__container {
+  position: relative;
+  width: 100%;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: flex;
+  position: absolute;
+  top: 45px;
+  max-height: 150px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 20;
+  overflow: auto;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 30px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+/* Alerts */
+.react-confirm-alert-overlay {
+  z-index: 10000 !important;
+}
+
+/* Toast Notifications */
+.react-toast-notifications__container {
+  z-index: 10000 !important;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #ffffff;
+  margin-left: -250px;
+  transition: all 0.5s;
+}
+
+.sidebar.is-open {
+  margin-left: 0;
+  transition: 0.5s;
+}
+
+.sidebar-header {
+  background: #ffffff;
+}
+
+.sidebar-header h3 {
+  color: #000;
+  padding: 1em;
+}
+
+.menu-open {
+  background: #6d7fcc;
+}
+
+.nav-item:hover {
+  color: #000;
+  background: #fff;
+}
+
+.items-menu {
+  color: #fff;
+  background: #6d7fcc;
+}
+
+li a.dropdown-toggle::after {
+  display: inline-flex;
+  position: relative;
+  left: 60%;
+  top: 10%;
+}
+
+.sidebar-header > span {
+  position: relative;
+  float: right;
+  margin: 0.5em;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+.side-menu {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.side-menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background: #5466b3;
+  border-radius: 3px;
+}
+
+.side-menu::-webkit-scrollbar-thumb:hover {
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+.content {
+  margin-left: 0;
+  padding: 0 !important;
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    overflow: hidden;
+  }
+
+  .content.is-open {
+    margin-left: 100%;
+  }
+
+  .sidebar.is-open {
+    min-width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    transition: all 0.5s, height 0s;
+  }
+
+  .sidebar.is-open > .sidebar-header span {
+    display: unset;
+  }
+
+  li a.dropdown-toggle::after {
+    display: inline-block;
+    position: relative;
+    left: 68%;
+  }
+}
+
+.App {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.search-wrapper {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);
+  border: 0 !important;
+  transition: box-shadow 0.15s ease;
+  height: calc(2.75rem + 2px);
+}
+
+.search-wrapper .searchBox {
+  font-size: 0.875rem;
+}
+
+.search-wrapper .chip {
+  background-color: #00214c !important;
+  color: white !important;
+}
+
+.search-wrapper .highlight {
+  background-color: #00214c !important;
+}
+
+.video-react-poster {
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+@media (max-width: 600px) {
+  .hidden-sm  {
+    display: none !important;
+  }
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #000;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+.wizardContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.CVModal {
+  max-width: 90% !important;
+}
