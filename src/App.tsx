@@ -2,6 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// Argon Design System
+import 'assets/styles/index.css';
+import 'assets/icons/nucleo/css/nucleo.css';
+import 'assets/icons/font-awesome/css/font-awesome.min.css';
+import 'assets/styles/argon-dashboard-react.css';
+
 function App() {
   return (
     <div className="App">
