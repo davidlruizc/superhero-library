@@ -1,6 +1,6 @@
 import ButtonStyled from 'components/atoms/ButtonStyled';
 import * as React from 'react';
-import { Card, CardBody, Collapse } from 'reactstrap';
+import { Col, Collapse, Row } from 'reactstrap';
 import { MainWrapper, Title, Text } from './styles';
 
 const Filter: React.FC = () => {
@@ -15,13 +15,26 @@ const Filter: React.FC = () => {
         <ButtonStyled onClick={toggle} text="Filters" icon="fa fa-filter" />
       </MainWrapper>
       <Collapse isOpen={isOpen}>
-        <Card>
-          <CardBody>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-            sapiente ea proident.
-          </CardBody>
-        </Card>
+        <MainWrapper>
+          <Row>
+            <Col sm="6">
+              <select className="form-control">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </Col>
+            <Col sm="6">
+              <select className="form-control ">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </Col>
+          </Row>
+        </MainWrapper>
       </Collapse>
     </div>
   );
