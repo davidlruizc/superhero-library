@@ -4,15 +4,18 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled(Container)`
   text-align: center;
+  padding-top: 40px;
 `;
 
 export const ImageHeader = styled.img`
-  width: 400px;
+  width: 300px;
+  margin: 20px;
 `;
 
 export const TitleHeader = styled.h1`
   color: ${ON_BACKGROUND_COLOR};
   font-size: 40px;
+  margin: 20px;
 `;
 
 export const CardSearch = styled(Card)`
