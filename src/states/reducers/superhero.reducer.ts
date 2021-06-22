@@ -9,7 +9,10 @@ export const initialState: ISuperheroReducer = { response: null };
 
 export type ISuperheroActionType = ISetSuperhero;
 
-const superheroReducer = (state: ISuperheroReducer, action: ISuperheroActionType) => {
+const superheroReducer = (
+  state: ISuperheroReducer = initialState,
+  action: ISuperheroActionType
+): ISuperheroReducer => {
   switch (action.type) {
     case SET_SUPERHERO:
       return {
