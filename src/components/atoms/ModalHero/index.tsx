@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, ModalBody, ModalFooter, Progress } from 'reactstrap';
 import {
   HeroItem,
   HeroItemMain,
@@ -36,6 +36,13 @@ const ModalHero: React.FC<ModalHeroProps> = ({ modal, toggle }) => {
         <HeroItem>
           <HeroItemMain>Gender: </HeroItemMain>Embeces
         </HeroItem>
+        <SubTitle>Powerstats:</SubTitle>
+        <div>
+          <div className="text-left">Intelligence</div>
+          <Progress value="25" color="green" animated={true} style={{ height: 20 }}>
+            25%
+          </Progress>
+        </div>
       </ModalBody>
       <ModalFooter>
         <Button color="secondary" onClick={toggle}>

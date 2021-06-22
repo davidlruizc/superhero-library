@@ -8,9 +8,9 @@ interface ButtonStyledProps extends ButtonProps {
   statusColor?: string;
 }
 
-const ButtonStyled: React.FC<ButtonStyledProps> = ({ text, icon, statusColor, ...props }) => {
+const ButtonStyled: React.FC<ButtonStyledProps> = ({ text, icon, statusColor, ...rest }) => {
   return (
-    <CustomButton {...props} statusColor={statusColor}>
+    <CustomButton {...rest} statusColor={statusColor}>
       <ContentWrapper>
         {icon && (
           <IconWrapper>
