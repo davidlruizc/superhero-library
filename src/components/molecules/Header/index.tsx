@@ -11,6 +11,7 @@ import {
   TitleHeader,
 } from './styles';
 import ComicImage from 'assets/images/comic.svg';
+import Filter from '../Filter';
 
 const Header: React.FC = () => {
   return (
@@ -27,6 +28,7 @@ const Header: React.FC = () => {
           </SearchWrapper>
         </SearchMain>
       </CardSearch>
+      <Filter />
     </HeaderContainer>
   );
 };
