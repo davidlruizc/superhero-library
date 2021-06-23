@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+/**
+ * Custom Hook: Identifica si una `URL` de una imagen retorna un 404 o algún otro error y permite reemplazarla por una por defecto
+ */
 export const useImageError = () => {
   const [el, setEl] = React.useState<any | null>(null); // contains image reference
   const [error, setError] = React.useState<boolean>(false); // contains error flag

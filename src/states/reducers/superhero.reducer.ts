@@ -9,6 +9,13 @@ export const initialState: ISuperheroReducer = { response: null };
 
 export type ISuperheroActionType = ISetSuperhero;
 
+/**
+ * Redux Reducer
+ *
+ * @param {ISuperheroReducer} state
+ * @param {ISuperheroActionType} action
+ * @returns ISuperheroReducer
+ */
 const superheroReducer = (
   state: ISuperheroReducer = initialState,
   action: ISuperheroActionType
