@@ -13,12 +13,15 @@ import {
 import ComicImage from 'assets/images/comic.svg';
 import Filter from '../Filter';
 import { useForm, Controller } from 'react-hook-form';
+import { useToasts } from 'react-toast-notifications';
 
 interface SearchBarForm {
   searchText: string;
 }
 
 const Header: React.FC = () => {
+  const toast = useToasts();
+
   const defaultValues: SearchBarForm = {
     searchText: '',
   };
@@ -32,7 +35,12 @@ const Header: React.FC = () => {
   });
 
   const submitSearch = (data: SearchBarForm) => {
-    console.log(data);
+    if (data.searchText !== '') {
+      console.log(data);
+    }
+    toast.addToast(`Field cannot be empty`, {
+      appearance: 'error',
+    });
   };
 
   return (
