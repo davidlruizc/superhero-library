@@ -8,6 +8,19 @@ interface ButtonStyledProps extends ButtonProps {
   statusButtonColor?: string;
 }
 
+/**
+ * ButtonStyled componente UI personalizado referente a un botón con la posibilidad de agregar un icono.
+ *
+ * @typedef {ButtonProps} ButtonStyledProps uso de las props nativas de un botón
+ * @param {string} text
+ * @param {string} icon opcional
+ * @param {string} statusButtonColor opcional
+ *
+ * Uso:
+ * ```js
+ * <ButtonStyled text="Load more..." onClick={toggle} />
+ * ```
+ */
 const ButtonStyled: React.FC<ButtonStyledProps> = ({ text, icon, statusButtonColor, ...rest }) => {
   return (
     <CustomButton {...rest} statusButtonColor={statusButtonColor}>

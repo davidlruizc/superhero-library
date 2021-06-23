@@ -14,6 +14,27 @@ interface CardHeroProps {
   powerstats: IPowerstats;
 }
 
+/**
+ * CardHero muestra la portada inicial del superheroe: Foto, Nombre, ocupación.
+ * En caso de que la imagen no sea cargada muestra una alternativa por defecto.
+ * 
+ * @param {string} image
+ * @param {string} name
+ * @param {string} work
+ * @typedef {IAppearance} appearance
+ * @typedef {IPowerstats} powerstats
+ * 
+ * Uso:
+ * ```js
+ * <CardHero
+    image={superhero.image.url}
+    name={superhero.name}
+    work={superhero.work.occupation}
+    appearance={superhero.appearance}
+    powerstats={superhero.powerstats}
+  />
+ * ```
+ */
 const CardHero: React.FC<CardHeroProps> = ({ image, name, work, appearance, powerstats }) => {
   const [modal, setModal] = React.useState(false);
 

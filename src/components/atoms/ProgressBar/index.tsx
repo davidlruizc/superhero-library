@@ -7,6 +7,17 @@ interface ProgressBarProps {
   color: string;
 }
 
+/**
+ * ProgressBar muestra una gráfica por habilidad
+ *
+ * @param {string} title
+ * @param {string} powerstats
+ * @param {string} color
+ * Uso:
+ * ```js
+ * <ProgressBar title="Durability" powerstats="50" color="indigo" />
+ * ```
+ */
 const ProgressBar: React.FC<ProgressBarProps> = ({ title, powerstats, color }) => {
   return (
     <React.Fragment>

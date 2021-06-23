@@ -22,6 +22,29 @@ interface ModalHeroProps {
   powerstats: IPowerstats;
 }
 
+/**
+ * ModalHero componente modal que muestra la información de apariencia y habilidades del personaje.
+ * El componente verifica que la infomación recibida por el servicio se user friendly en caso contrario muestra que el dato del personaje es desconocido.
+ * 
+ * @typedef {IAppearance} appearance
+ * @typedef {IPowerstats} powerstats
+ * @param {boolean} modal 
+ * @param {function} toggle 
+ * @param {string} name 
+ * @param {string} image 
+ * 
+ * Uso:
+ * ```js
+ * <ModalHero
+    modal={modal}
+    toggle={toggle}
+    name={name}
+    appearance={appearance}
+    powerstats={powerstats}
+    image={image}
+  />
+ * ```
+ */
 const ModalHero: React.FC<ModalHeroProps> = ({
   modal,
   toggle,

@@ -10,6 +10,17 @@ interface FilterProps {
   filterAppearance: (value: string) => void;
 }
 
+/**
+ * Filter se encarga de mostar los selects para que el usuario pueda escoger su opción a filtar.
+ *
+ * @param {function} filterPowerstats función a la que se le envia el parametro seleccionado y realiza el ordenamiento por habilidades respectivo
+ * @param {function} filterAppearance función a la que se le envia el parametro seleccionado y realiza el ordenamiento por apariencia respectivo
+ *
+ * Uso:
+ * ```html
+ * <Filter filterPowerstats={orderFilterPowerstats} filterAppearance={orderFilterByAppearance} />
+ * ```
+ */
 const Filter: React.FC<FilterProps> = ({ filterPowerstats, filterAppearance }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
