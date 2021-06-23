@@ -14,6 +14,7 @@ import ComicImage from 'assets/images/comic.svg';
 import Filter from '../Filter';
 import { useForm, Controller } from 'react-hook-form';
 import { useToasts } from 'react-toast-notifications';
+import { SearchName } from 'actions/api/SearchNameActions';
 
 interface SearchBarForm {
   searchText: string;
@@ -36,11 +37,29 @@ const Header: React.FC = () => {
 
   const submitSearch = (data: SearchBarForm) => {
     if (data.searchText !== '') {
-      console.log(data);
+      SearchName(data.searchText)
+        .then((heroFound) => {
+          if (heroFound) {
+            if (heroFound.ok) {
+              // TODO: dispatch state
+              console.log(heroFound);
+            } else {
+              toast.addToast(heroFound?.error, {
+                appearance: 'error',
+              });
+            }
+          }
+        })
+        .catch((error) => {
+          toast.addToast(error.message, {
+            appearance: 'error',
+          });
+        });
+    } else {
+      toast.addToast(`Field cannot be empty`, {
+        appearance: 'error',
+      });
     }
-    toast.addToast(`Field cannot be empty`, {
-      appearance: 'error',
-    });
   };
 
   return (
