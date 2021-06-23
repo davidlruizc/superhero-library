@@ -8,9 +8,11 @@ interface CardHeroProps {
   image: string;
   name: string;
   work: string;
+  appearance: IAppearance;
+  powerstats: IPowerstats;
 }
 
-const CardHero: React.FC<CardHeroProps> = ({ image, name, work }) => {
+const CardHero: React.FC<CardHeroProps> = ({ image, name, work, appearance, powerstats }) => {
   const [modal, setModal] = React.useState(false);
 
   const toggle = () => setModal(!modal);
@@ -32,7 +34,14 @@ const CardHero: React.FC<CardHeroProps> = ({ image, name, work }) => {
         <HeroText>{workHero}</HeroText>
         <ButtonStyled text="Load more..." onClick={toggle} />
       </CardBody>
-      <ModalHero modal={modal} toggle={toggle} />
+      <ModalHero
+        modal={modal}
+        toggle={toggle}
+        name={name}
+        appearance={appearance}
+        powerstats={powerstats}
+        image={image}
+      />
     </CardContainer>
   );
 };

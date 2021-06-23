@@ -18,6 +18,8 @@ const Feed: React.FC = () => {
                   image={superhero.image.url}
                   name={superhero.name}
                   work={superhero.work.occupation}
+                  appearance={superhero.appearance}
+                  powerstats={superhero.powerstats}
                 />
               </Col>
             </React.Fragment>

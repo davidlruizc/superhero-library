@@ -12,20 +12,20 @@ export const ModalHeroProfile = styled.img`
 `;
 
 export const HeroTitle = styled(Label)`
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
   width: 100%;
 `;
 
 export const SubTitle = styled(Label)`
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
   width: 100%;
   text-decoration: underline;
 `;
 
 export const HeroItem = styled(Label)`
-  font: 14px;
+  font-size: 15px !important;
   width: 100%;
 `;
 
