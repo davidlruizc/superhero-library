@@ -14,17 +14,15 @@ const Feed: React.FC = () => {
       {hero.response ? (
         <Row>
           {hero.response.map((superhero) => (
-            <React.Fragment>
-              <Col sm="4" key={superhero.id}>
-                <CardHero
-                  image={superhero.image.url}
-                  name={superhero.name}
-                  work={superhero.work.occupation}
-                  appearance={superhero.appearance}
-                  powerstats={superhero.powerstats}
-                />
-              </Col>
-            </React.Fragment>
+            <Col sm="4" key={superhero.id}>
+              <CardHero
+                image={superhero.image.url}
+                name={superhero.name}
+                work={superhero.work.occupation}
+                appearance={superhero.appearance}
+                powerstats={superhero.powerstats}
+              />
+            </Col>
           ))}
         </Row>
       ) : (

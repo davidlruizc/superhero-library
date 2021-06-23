@@ -28,8 +28,9 @@ const Filter: React.FC<FilterProps> = ({ filterPowerstats, filterAppearance }) =
               <MultiSelect
                 label="Order by powerstats"
                 onChange={(value) => filterPowerstats(value.target.value)}
+                defaultValue={'DEFAULT'}
               >
-                <Option selected>Open this select powerstats</Option>
+                <Option value="DEFAULT">Open this select powerstats</Option>
                 <Option value="intelligence">Intelligence</Option>
                 <Option value="strength">Strength</Option>
                 <Option value="speed">Speed</Option>
@@ -42,8 +43,9 @@ const Filter: React.FC<FilterProps> = ({ filterPowerstats, filterAppearance }) =
               <MultiSelect
                 label="Order by appearance"
                 onChange={(value) => filterAppearance(value.target.value)}
+                defaultValue={'DEFAULT'}
               >
-                <Option selected>Open this select appereance</Option>
+                <Option value="DEFAULT">Open this select appereance</Option>
                 <Option value="gender">Gender</Option>
                 <Option value="race">Race</Option>
                 <Option value="height">Height</Option>

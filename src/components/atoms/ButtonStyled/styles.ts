@@ -2,8 +2,9 @@ import { ERROR_COLOR, ON_PRIMARY_COLOR, PRIMARY_COLOR } from 'assets/styles/colo
 import { Button } from 'reactstrap';
 import styled, { css } from 'styled-components';
 
-export const CustomButton = styled(Button)<{ statusColor?: string }>`
-  background-color: ${(props) => (props.statusColor === 'danger' ? ERROR_COLOR : PRIMARY_COLOR)};
+export const CustomButton = styled(Button)<{ statusButtonColor?: string }>`
+  background-color: ${(props) =>
+    props.statusButtonColor === 'danger' ? ERROR_COLOR : PRIMARY_COLOR};
   color: ${ON_PRIMARY_COLOR};
   align-self: center;
 `;
