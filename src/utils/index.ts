@@ -43,3 +43,6 @@ export function sortAppearance(ascending: boolean, appearance: string) {
     }
   };
 }
+
+export const ERROR_IMAGE =
+  'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80';

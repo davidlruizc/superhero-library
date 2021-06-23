@@ -1,5 +1,7 @@
+import { useImageError } from 'hooks/image';
 import * as React from 'react';
 import { CardBody } from 'reactstrap';
+import { ERROR_IMAGE } from 'utils';
 import ButtonStyled from '../ButtonStyled';
 import ModalHero from '../ModalHero';
 import { CardContainer, HeroImage, HeroText, HeroTitle } from './styles';
@@ -15,6 +17,8 @@ interface CardHeroProps {
 const CardHero: React.FC<CardHeroProps> = ({ image, name, work, appearance, powerstats }) => {
   const [modal, setModal] = React.useState(false);
 
+  const [setImg, hasError] = useImageError();
+
   const toggle = () => setModal(!modal);
 
   const workHero = React.useMemo(() => {
@@ -27,7 +31,11 @@ const CardHero: React.FC<CardHeroProps> = ({ image, name, work, appearance, powe
   return (
     <CardContainer>
       <div>
-        <HeroImage src={image} className="card-img-top" alt={image} />
+        {hasError ? (
+          <HeroImage src={ERROR_IMAGE} className="card-img-top" alt={ERROR_IMAGE} />
+        ) : (
+          <HeroImage ref={setImg} src={image} className="card-img-top" alt={image} />
+        )}
       </div>
       <CardBody>
         <HeroTitle>{name}</HeroTitle>
