@@ -18,7 +18,7 @@ import { SearchName } from 'actions/api/SearchNameActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSuperhero } from 'actions/redux/superheroAction';
 import { RootState } from 'states';
-import { sortPowerstats } from 'utils';
+import { sortAppearance, sortPowerstats } from 'utils';
 
 interface SearchBarForm {
   searchText: string;
@@ -77,6 +77,15 @@ const Header: React.FC = () => {
     }
   };
 
+  const orderFilterByAppearance = (appearance: string) => {
+    if (hero.response) {
+      hero.response.sort(sortAppearance(false, appearance));
+
+      console.log(hero.response);
+      dispatch(setSuperhero(hero.response));
+    }
+  };
+
   return (
     <HeaderContainer>
       <ImageHeader src={ComicImage} />
@@ -104,7 +113,7 @@ const Header: React.FC = () => {
           </SearchWrapper>
         </SearchMain>
       </CardSearch>
-      <Filter filterPowerstats={orderFilterPowerstats} />
+      <Filter filterPowerstats={orderFilterPowerstats} filterAppearance={orderFilterByAppearance} />
     </HeaderContainer>
   );
 };
