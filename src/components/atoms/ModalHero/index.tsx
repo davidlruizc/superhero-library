@@ -1,5 +1,7 @@
+import { useImageError } from 'hooks/image';
 import * as React from 'react';
 import { Button, ModalBody, ModalFooter } from 'reactstrap';
+import { ERROR_IMAGE } from 'utils';
 import ProgressBar from '../ProgressBar';
 import {
   HeroItem,
@@ -28,6 +30,7 @@ const ModalHero: React.FC<ModalHeroProps> = ({
   powerstats,
   image,
 }) => {
+  const [setImg, hasError] = useImageError();
   const genderDefinition = React.useMemo(() => {
     if (appearance.gender === '-' || appearance.gender === 'null') {
       return 'unknown';
@@ -74,7 +77,11 @@ const ModalHero: React.FC<ModalHeroProps> = ({
     <ModalHeroContainer isOpen={modal} toggle={toggle}>
       <ModalHeroHeader toggle={toggle}>Details about this superhero</ModalHeroHeader>
       <ModalBody>
-        <ModalHeroProfile src={image} className="card-img-top" alt={image} />
+        {hasError ? (
+          <ModalHeroProfile src={ERROR_IMAGE} className="card-img-top" alt={ERROR_IMAGE} />
+        ) : (
+          <ModalHeroProfile ref={setImg} src={image} className="card-img-top" alt={image} />
+        )}
         <HeroTitle>{name}</HeroTitle>
         <SubTitle>Appearance:</SubTitle>
         <HeroItem>
