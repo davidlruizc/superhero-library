@@ -6,6 +6,14 @@ import { Col, Row } from 'reactstrap';
 import { RootState } from 'states';
 import { FeedContainer } from './styles';
 
+/**
+ * Feed se encarga de renderear la lista de heroes almacenadas en el reducer `superheroReducer`
+ *
+ * Uso:
+ * ```js
+ * <Feed />
+ * ```
+ */
 const Feed: React.FC = () => {
   const hero = useSelector((state: RootState) => state.superheroReducer);
 

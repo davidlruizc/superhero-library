@@ -1,6 +1,12 @@
 import { baseURL } from 'actions/URLs';
 import { HttpRequest } from './HttpRequest';
 
+/**
+ * Servicio que permite traer la información de un único personaje por su id
+ *
+ * @param {string} id
+ * @returns {Promise<ISuperHero | undefined>} lista
+ */
 export const FindSuperheroById = async (id: string): Promise<ISuperHero | undefined> => {
   try {
     const request = await new HttpRequest().GetFull<ISearchName>(`${baseURL}/${id}`);

@@ -24,6 +24,18 @@ interface SearchBarForm {
   searchText: string;
 }
 
+/**
+ * Header se encarga de mostar la cabecera de la aplicación que contiene:
+ * - Barra de busqueda
+ * - Filtros por apariencia y habilidades
+ *
+ * Dentro del componente este realiza las busquedas respectivas y retorna la respuesta de la API almacenando el contenido dentro del estado de Redux
+ *
+ * Uso:
+ * ```html
+ * <Header />
+ * ```
+ */
 const Header: React.FC = () => {
   const toast = useToasts();
   const dispatch = useDispatch();

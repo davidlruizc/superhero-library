@@ -19,7 +19,16 @@ const defaultHeader: IHeaders = {
   },
 };
 
+/**
+ * HttpRequest es una clase que ayuda a hacer realizar todas las llamadas HTTP
+ */
 export class HttpRequest {
+  /**
+   * Método GET que permite traer toda la información anidada dentro de uns estructura de `results`
+   *
+   * @param {string} request
+   * @returns {Promise<IHttpResponse<T>>} respuesta
+   */
   public async Get<T>(request: string): Promise<IHttpResponse<T>> {
     let headers = {
       ...defaultHeader,
@@ -30,6 +39,12 @@ export class HttpRequest {
     return this.GetResponse(response);
   }
 
+  /**
+   * Método GET para todas aquellas peticiones que su resultado no tiene una estructura anidada
+   *
+   * @param {string} request
+   * @returns {Promise<IHttpResponse<T>>} respuesta
+   */
   public async GetFull<T>(request: string): Promise<IHttpResponse<T>> {
     let headers = {
       ...defaultHeader,
