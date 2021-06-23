@@ -1,5 +1,7 @@
 # SUPERHERO LIBRARY
 
+![superhero library](./thumbnails/thumbnail.png)
+
 ## Contenidos
 
 1. [Ejecutar Proyecto](#ejecutar-proyecto)
