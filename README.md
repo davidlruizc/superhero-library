@@ -5,6 +5,7 @@
 1. [Ejecutar Proyecto](#ejecutar-proyecto)
 2. [Componentes](#componentes)
 3. [Tecnologías](#tecnologías)
+4. [GitFlow](#gitflow)
 
 ## Ejecutar Proyecto
 
@@ -231,3 +232,7 @@ Este proyecto está realizado con las siguientes tecnologías:
 - Styled Components
 - React Hook Form
 - Redux
+
+## GitFlow
+
+Este proyecto se trabajó con el workflow `GitFlow`. Donde la rama de `develop` es una de las ramas principales y cada `feature/*` que se realize se hace un merge por `Pull Request`a esta misma. Dejando `main`como rama de producción.
