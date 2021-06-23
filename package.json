@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "doc": "react-doc-generator ./src/ -o DOCUMENTATION.md"
+    "doc": "react-doc-generator ./src/ -x ts,tsx -o DOCUMENTATION.md"
   },
   "eslintConfig": {
     "extends": [
