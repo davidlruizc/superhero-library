@@ -1,4 +1,5 @@
 import CardHero from 'components/atoms/Card';
+import SkeletonList from 'components/atoms/Skeleton';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Col, Row } from 'reactstrap';
@@ -27,7 +28,7 @@ const Feed: React.FC = () => {
           ))}
         </Row>
       ) : (
-        <div>Loading...</div>
+        <SkeletonList />
       )}
     </FeedContainer>
   );
