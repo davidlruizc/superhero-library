@@ -81,7 +81,6 @@ const Header: React.FC = () => {
     if (hero.response) {
       hero.response.sort(sortAppearance(false, appearance));
 
-      console.log(hero.response);
       dispatch(setSuperhero(hero.response));
     }
   };
