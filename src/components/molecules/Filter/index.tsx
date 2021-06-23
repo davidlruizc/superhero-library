@@ -3,9 +3,14 @@ import MultiSelect from 'components/atoms/MultiSelect';
 import Option from 'components/atoms/MultiSelect/Option';
 import * as React from 'react';
 import { Col, Collapse, Row } from 'reactstrap';
-import { MainWrapper, Title, Text, ButtonWrapper } from './styles';
+import { MainWrapper, Title, Text } from './styles';
 
-const Filter: React.FC = () => {
+interface FilterProps {
+  filterPowerstats: (value: string) => void;
+  filterAppearance: (value: string) => void;
+}
+
+const Filter: React.FC<FilterProps> = ({ filterPowerstats, filterAppearance }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -19,31 +24,34 @@ const Filter: React.FC = () => {
       <Collapse isOpen={isOpen}>
         <MainWrapper>
           <Row>
-            <Col sm="4">
-              <MultiSelect label="Order by powerstats">
+            <Col sm="6">
+              <MultiSelect
+                label="Order by powerstats"
+                onChange={(value) => filterPowerstats(value.target.value)}
+              >
                 <Option selected>Open this select powerstats</Option>
-                <Option value="1">Intelligence</Option>
-                <Option value="2">Strength</Option>
-                <Option value="3">Speed</Option>
-                <Option value="4">Durability</Option>
-                <Option value="5">Power</Option>
-                <Option value="6">Combat</Option>
+                <Option value="intelligence">Intelligence</Option>
+                <Option value="strength">Strength</Option>
+                <Option value="speed">Speed</Option>
+                <Option value="durability">Durability</Option>
+                <Option value="power">Power</Option>
+                <Option value="combat">Combat</Option>
               </MultiSelect>
             </Col>
-            <Col sm="4">
-              <MultiSelect label="Order by appearance">
+            <Col sm="6">
+              <MultiSelect
+                label="Order by appearance"
+                onChange={(value) => filterAppearance(value.target.value)}
+              >
                 <Option selected>Open this select appereance</Option>
-                <Option value="1">Gender</Option>
-                <Option value="2">Race</Option>
-                <Option value="3">Height</Option>
-                <Option value="4">Weight</Option>
-                <Option value="5">Eye Color</Option>
-                <Option value="6">Hair Color</Option>
+                <Option value="gender">Gender</Option>
+                <Option value="race">Race</Option>
+                <Option value="height">Height</Option>
+                <Option value="weight">Weight</Option>
+                <Option value="eye-color">Eye Color</Option>
+                <Option value="hair-color">Hair Color</Option>
               </MultiSelect>
             </Col>
-            <ButtonWrapper sm="4">
-              <ButtonStyled text="Clear" statusColor="danger" />
-            </ButtonWrapper>
           </Row>
         </MainWrapper>
       </Collapse>

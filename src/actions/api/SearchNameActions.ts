@@ -1,11 +1,23 @@
 import { superheroURLs } from 'actions/URLs';
 import { HttpRequest } from './HttpRequest';
 
-export const SearchName = async (name: string): Promise<ISearchName | undefined> => {
+export const SearchName = async (name: string): Promise<ISearchResponseAPI | undefined> => {
   try {
-    const request = await new HttpRequest().Get<ISearchName>(`${superheroURLs.searchName}${name}`);
+    const request = await new HttpRequest().Get<ISearchName[]>(
+      `${superheroURLs.searchName}${name}`
+    );
+    if (request.okay && request.message === 'error') {
+      return {
+        ok: false,
+        error: request.error,
+      };
+    }
+
     if (request.okay && request.data !== null) {
-      return request.data;
+      return {
+        ok: true,
+        data: request.data,
+      };
     }
   } catch (error) {
     throw new Error(error);

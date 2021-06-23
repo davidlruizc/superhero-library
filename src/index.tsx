@@ -12,15 +12,18 @@ import Home from 'pages/Home';
 import { createStore } from 'redux';
 import rootReducer from 'states';
 import { Provider } from 'react-redux';
+import { ToastProvider } from 'react-toast-notifications';
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <Home />
-    </React.StrictMode>
-  </Provider>,
+  <ToastProvider autoDismiss autoDismissTimeout={5000}>
+    <Provider store={store}>
+      <React.StrictMode>
+        <Home />
+      </React.StrictMode>
+    </Provider>
+  </ToastProvider>,
   document.getElementById('root')
 );
 

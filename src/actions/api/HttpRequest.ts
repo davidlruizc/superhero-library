@@ -1,8 +1,3 @@
-declare interface IAPIresponse<T> {
-  response: string;
-  results: T;
-}
-
 enum RequestMethod {
   GET = 'GET',
   POST = 'POST',
@@ -49,29 +44,33 @@ export class HttpRequest {
         okay: true,
         message: apiData.response,
         data: apiData,
+        error: apiData.error,
       };
     } else {
       return {
         okay: false,
         message: await response.text(),
         data: null,
+        error: 'error',
       };
     }
   }
 
   private async GetResponse<T>(response: Response): Promise<IHttpResponse<T>> {
     if (response.status === 200) {
-      const apiData: IAPIresponse<T> = await response.json();
+      const apiData = await response.json();
       return {
         okay: true,
         message: apiData.response,
         data: apiData.results,
+        error: apiData.error,
       };
     } else {
       return {
         okay: false,
         message: await response.text(),
         data: null,
+        error: 'error',
       };
     }
   }

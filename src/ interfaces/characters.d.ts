@@ -1,3 +1,9 @@
+declare interface ISearchResponseAPI {
+  ok: boolean;
+  data?: ISearchName[];
+  error?: string;
+}
+
 declare interface ISearchName {
   id: string;
   name: string;

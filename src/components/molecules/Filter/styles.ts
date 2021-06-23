@@ -1,5 +1,4 @@
 import { ON_BACKGROUND_COLOR } from 'assets/styles/colors';
-import { Col } from 'reactstrap';
 import styled from 'styled-components';
 import { device } from 'utils/responsiveTemplate';
 
@@ -24,8 +23,4 @@ export const MainWrapper = styled.div`
   width: 100%;
   justify-content: space-between;
   padding: 20px;
-`;
-
-export const ButtonWrapper = styled(Col)`
-  align-self: center;
 `;

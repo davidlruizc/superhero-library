@@ -5,9 +5,11 @@ import Feed from 'components/molecules/Feed';
 import Header from 'components/molecules/Header';
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
+import { useToasts } from 'react-toast-notifications';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
+  const toast = useToasts();
 
   function getRandomArbitrary(min: number, max: number) {
     return Math.round(Math.random() * (max - min) + min);
@@ -16,8 +18,8 @@ const Home: React.FC = () => {
   const initialHeros = React.useCallback(() => {
     Promise.all([
       FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
+      FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
       // TODO: remove when development turns to end
-      // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
       // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
       // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
       // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
@@ -26,7 +28,12 @@ const Home: React.FC = () => {
       .then((response: any) => {
         dispatch(setSuperhero(response));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        toast.addToast(error.message, {
+          appearance: 'error',
+        });
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   React.useEffect(() => {
