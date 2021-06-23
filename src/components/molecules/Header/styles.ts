@@ -73,6 +73,7 @@ export const SearchIconAnchor = styled.a`
   bottom: 30px;
   position: relative;
   border-radius: 5px;
+  cursor: pointer;
 `;
 
 export const SearchIcon = styled.i`
