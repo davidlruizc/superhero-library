@@ -27,11 +27,17 @@ export const Appearance = async (id: string): Promise<IAppearanceResponse | unde
   }
 };
 
-export const FindSuperheroById = async (id: string): Promise<ISearchName | undefined> => {
+export const FindSuperheroById = async (id: string): Promise<ISuperHero | undefined> => {
   try {
     const request = await new HttpRequest().GetFull<ISearchName>(`${baseURL}/${id}`);
     if (request.okay && request.data !== null) {
-      return request.data;
+      return {
+        id: request.data.id,
+        appearance: request.data.appearance,
+        image: request.data.image,
+        name: request.data.name,
+        powerstats: request.data.powerstats,
+      };
     }
   } catch (error) {
     throw new Error(error);
