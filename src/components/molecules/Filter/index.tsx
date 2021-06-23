@@ -20,7 +20,10 @@ const Filter: React.FC = () => {
         <MainWrapper>
           <Row>
             <Col sm="4">
-              <MultiSelect label="Order by powerstats">
+              <MultiSelect
+                label="Order by powerstats"
+                onChange={(value) => console.log(value.target.value)}
+              >
                 <Option selected>Open this select powerstats</Option>
                 <Option value="1">Intelligence</Option>
                 <Option value="2">Strength</Option>
