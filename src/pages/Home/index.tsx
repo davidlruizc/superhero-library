@@ -16,8 +16,8 @@ const Home: React.FC = () => {
   const initialHeros = React.useCallback(() => {
     Promise.all([
       FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
+      FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
       // TODO: remove when development turns to end
-      // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
       // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
       // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
       // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),

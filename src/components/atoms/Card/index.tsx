@@ -4,22 +4,32 @@ import ButtonStyled from '../ButtonStyled';
 import ModalHero from '../ModalHero';
 import { CardContainer, HeroImage, HeroText, HeroTitle } from './styles';
 
-const CardHero: React.FC = () => {
+interface CardHeroProps {
+  image: string;
+  name: string;
+  work: string;
+}
+
+const CardHero: React.FC<CardHeroProps> = ({ image, name, work }) => {
   const [modal, setModal] = React.useState(false);
 
   const toggle = () => setModal(!modal);
+
+  const workHero = React.useMemo(() => {
+    if (work === '-' || work === 'null') {
+      return 'Occupation: Not identified';
+    }
+    return `Occupation: ${work}`;
+  }, [work]);
+
   return (
     <CardContainer>
       <div>
-        <HeroImage
-          src="https://www.superherodb.com/pictures2/portraits/10/100/626.jpg"
-          className="card-img-top"
-          alt="..."
-        />
+        <HeroImage src={image} className="card-img-top" alt={image} />
       </div>
       <CardBody>
-        <HeroTitle>Special title treatment</HeroTitle>
-        <HeroText>With supporting text below as a natural lead-in to additional content.</HeroText>
+        <HeroTitle>{name}</HeroTitle>
+        <HeroText>{workHero}</HeroText>
         <ButtonStyled text="Load more..." onClick={toggle} />
       </CardBody>
       <ModalHero modal={modal} toggle={toggle} />

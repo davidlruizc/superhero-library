@@ -37,6 +37,7 @@ export const FindSuperheroById = async (id: string): Promise<ISuperHero | undefi
         image: request.data.image,
         name: request.data.name,
         powerstats: request.data.powerstats,
+        work: request.data.work,
       };
     }
   } catch (error) {

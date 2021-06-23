@@ -12,9 +12,15 @@ const Feed: React.FC = () => {
       {hero.response ? (
         <Row>
           {hero.response.map((superhero) => (
-            <Col sm="4" key={superhero.id}>
-              <CardHero />
-            </Col>
+            <React.Fragment>
+              <Col sm="4" key={superhero.id}>
+                <CardHero
+                  image={superhero.image.url}
+                  name={superhero.name}
+                  work={superhero.work.occupation}
+                />
+              </Col>
+            </React.Fragment>
           ))}
         </Row>
       ) : (

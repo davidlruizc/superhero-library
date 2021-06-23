@@ -7,5 +7,6 @@ declare interface ISuperHero {
   name: string;
   powerstats: IPowerstats;
   appearance: IAppearance;
+  work: IWork;
   image: { url: string };
 }
