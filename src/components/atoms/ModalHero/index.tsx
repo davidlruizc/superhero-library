@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, ModalBody, ModalFooter, Progress } from 'reactstrap';
+import { Button, ModalBody, ModalFooter } from 'reactstrap';
 import ProgressBar from '../ProgressBar';
 import {
   HeroItem,
