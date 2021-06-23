@@ -237,4 +237,6 @@ Este proyecto está realizado con las siguientes tecnologías:
 
 ## GitFlow
 
+![git flow](./thumbnails/git.png)
+
 Este proyecto se trabajó con el workflow `GitFlow`. Donde la rama de `develop` es una de las ramas principales y cada `feature/*` que se realize se hace un merge por `Pull Request`a esta misma. Dejando `main`como rama de producción.
