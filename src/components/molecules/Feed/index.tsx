@@ -9,25 +9,17 @@ const Feed: React.FC = () => {
   const hero = useSelector((state: RootState) => state.superheroReducer);
   return (
     <FeedContainer>
-      {console.log(hero)}
-      <Row>
-        <Col sm="4">
-          <CardHero />
-        </Col>
-        <Col sm="4">
-          <CardHero />
-        </Col>
-        <Col sm="4">
-          <CardHero />
-        </Col>
-
-        <Col sm="4">
-          <CardHero />
-        </Col>
-        <Col sm="4">
-          <CardHero />
-        </Col>
-      </Row>
+      {hero.response ? (
+        <Row>
+          {hero.response.map((superhero) => (
+            <Col sm="4" key={superhero.id}>
+              <CardHero />
+            </Col>
+          ))}
+        </Row>
+      ) : (
+        <div>Loading...</div>
+      )}
     </FeedContainer>
   );
 };
