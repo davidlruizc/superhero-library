@@ -7,6 +7,15 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { useToasts } from 'react-toast-notifications';
 
+/**
+ * Componente Home padre y pantalla inicial de la SPA.
+ * Se encarga de listar los superheroes iniciales sin ningún dato de busqueda previamente usado.
+ *
+ * Uso:
+ * ```html
+ * <Home />
+ * ```
+ */
 const Home: React.FC = () => {
   const dispatch = useDispatch();
   const toast = useToasts();
