@@ -15,8 +15,10 @@ import Filter from '../Filter';
 import { useForm, Controller } from 'react-hook-form';
 import { useToasts } from 'react-toast-notifications';
 import { SearchName } from 'actions/api/SearchNameActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSuperhero } from 'actions/redux/superheroAction';
+import { RootState } from 'states';
+import { sortPowerstats } from 'utils';
 
 interface SearchBarForm {
   searchText: string;
@@ -25,6 +27,7 @@ interface SearchBarForm {
 const Header: React.FC = () => {
   const toast = useToasts();
   const dispatch = useDispatch();
+  const hero = useSelector((state: RootState) => state.superheroReducer);
 
   const defaultValues: SearchBarForm = {
     searchText: '',
@@ -66,6 +69,14 @@ const Header: React.FC = () => {
     }
   };
 
+  const orderFilterPowerstats = (powerstat: string) => {
+    if (hero.response) {
+      hero.response.sort(sortPowerstats(false, powerstat));
+
+      dispatch(setSuperhero(hero.response));
+    }
+  };
+
   return (
     <HeaderContainer>
       <ImageHeader src={ComicImage} />
@@ -93,7 +104,7 @@ const Header: React.FC = () => {
           </SearchWrapper>
         </SearchMain>
       </CardSearch>
-      <Filter />
+      <Filter filterPowerstats={orderFilterPowerstats} />
     </HeaderContainer>
   );
 };

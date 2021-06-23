@@ -5,7 +5,11 @@ import * as React from 'react';
 import { Col, Collapse, Row } from 'reactstrap';
 import { MainWrapper, Title, Text, ButtonWrapper } from './styles';
 
-const Filter: React.FC = () => {
+interface FilterProps {
+  filterPowerstats: (value: string) => void;
+}
+
+const Filter: React.FC<FilterProps> = ({ filterPowerstats }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -22,15 +26,15 @@ const Filter: React.FC = () => {
             <Col sm="4">
               <MultiSelect
                 label="Order by powerstats"
-                onChange={(value) => console.log(value.target.value)}
+                onChange={(value) => filterPowerstats(value.target.value)}
               >
                 <Option selected>Open this select powerstats</Option>
-                <Option value="1">Intelligence</Option>
-                <Option value="2">Strength</Option>
-                <Option value="3">Speed</Option>
-                <Option value="4">Durability</Option>
-                <Option value="5">Power</Option>
-                <Option value="6">Combat</Option>
+                <Option value="intelligence">Intelligence</Option>
+                <Option value="strength">Strength</Option>
+                <Option value="speed">Speed</Option>
+                <Option value="durability">Durability</Option>
+                <Option value="power">Power</Option>
+                <Option value="combat">Combat</Option>
               </MultiSelect>
             </Col>
             <Col sm="4">

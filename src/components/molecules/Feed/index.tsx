@@ -7,6 +7,7 @@ import { FeedContainer } from './styles';
 
 const Feed: React.FC = () => {
   const hero = useSelector((state: RootState) => state.superheroReducer);
+
   return (
     <FeedContainer>
       {hero.response ? (
