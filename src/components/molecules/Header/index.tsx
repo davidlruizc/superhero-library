@@ -15,6 +15,8 @@ import Filter from '../Filter';
 import { useForm, Controller } from 'react-hook-form';
 import { useToasts } from 'react-toast-notifications';
 import { SearchName } from 'actions/api/SearchNameActions';
+import { useDispatch } from 'react-redux';
+import { setSuperhero } from 'actions/redux/superheroAction';
 
 interface SearchBarForm {
   searchText: string;
@@ -22,6 +24,7 @@ interface SearchBarForm {
 
 const Header: React.FC = () => {
   const toast = useToasts();
+  const dispatch = useDispatch();
 
   const defaultValues: SearchBarForm = {
     searchText: '',
@@ -41,8 +44,9 @@ const Header: React.FC = () => {
         .then((heroFound) => {
           if (heroFound) {
             if (heroFound.ok) {
-              // TODO: dispatch state
-              console.log(heroFound);
+              if (heroFound.data) {
+                dispatch(setSuperhero(heroFound.data));
+              }
             } else {
               toast.addToast(heroFound?.error, {
                 appearance: 'error',

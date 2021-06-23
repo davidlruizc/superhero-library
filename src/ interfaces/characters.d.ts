@@ -1,6 +1,6 @@
 declare interface ISearchResponseAPI {
   ok: boolean;
-  data?: ISearchName;
+  data?: ISearchName[];
   error?: string;
 }
 

@@ -3,7 +3,9 @@ import { HttpRequest } from './HttpRequest';
 
 export const SearchName = async (name: string): Promise<ISearchResponseAPI | undefined> => {
   try {
-    const request = await new HttpRequest().Get<ISearchName>(`${superheroURLs.searchName}${name}`);
+    const request = await new HttpRequest().Get<ISearchName[]>(
+      `${superheroURLs.searchName}${name}`
+    );
     if (request.okay && request.message === 'error') {
       return {
         ok: false,
