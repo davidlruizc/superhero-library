@@ -26,3 +26,14 @@ export const Appearance = async (id: string): Promise<IAppearanceResponse | unde
     throw new Error(error);
   }
 };
+
+export const FindSuperheroById = async (id: string): Promise<ISearchName | undefined> => {
+  try {
+    const request = await new HttpRequest().GetFull<ISearchName>(`${baseURL}/${id}`);
+    if (request.okay && request.data !== null) {
+      return request.data;
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+};
