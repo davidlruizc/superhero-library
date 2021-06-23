@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button, ModalBody, ModalFooter, Progress } from 'reactstrap';
+import ProgressBar from '../ProgressBar';
 import {
   HeroItem,
   HeroItemMain,
@@ -102,40 +103,12 @@ const ModalHero: React.FC<ModalHeroProps> = ({
         </HeroItem>
         <SubTitle>Powerstats:</SubTitle>
         <div>
-          <div className="text-left">Intelligence</div>
-          <Progress
-            value={powerstats.intelligence}
-            color="green"
-            animated={true}
-            style={{ height: 20 }}
-          >
-            {powerstats.intelligence}%
-          </Progress>
-          <div className="text-left">Strength</div>
-          <Progress value={powerstats.strength} color="red" animated={true} style={{ height: 20 }}>
-            {powerstats.strength}%
-          </Progress>
-          <div className="text-left">Speed</div>
-          <Progress value={powerstats.speed} color="yellow" animated={true} style={{ height: 20 }}>
-            {powerstats.speed}%
-          </Progress>
-          <div className="text-left">Durability</div>
-          <Progress
-            value={powerstats.durability}
-            color="indigo"
-            animated={true}
-            style={{ height: 20 }}
-          >
-            {powerstats.durability}%
-          </Progress>
-          <div className="text-left">Power</div>
-          <Progress value={powerstats.power} color="blue" animated={true} style={{ height: 20 }}>
-            {powerstats.power}%
-          </Progress>
-          <div className="text-left">Combat</div>
-          <Progress value={powerstats.combat} color="orange" animated={true} style={{ height: 20 }}>
-            {powerstats.combat}%
-          </Progress>
+          <ProgressBar title="Intelligence" powerstats={powerstats.intelligence} color="green" />
+          <ProgressBar title="Strength" powerstats={powerstats.strength} color="red" />
+          <ProgressBar title="Speed" powerstats={powerstats.speed} color="yellow" />
+          <ProgressBar title="Durability" powerstats={powerstats.durability} color="indigo" />
+          <ProgressBar title="Power" powerstats={powerstats.power} color="blue" />
+          <ProgressBar title="Combat" powerstats={powerstats.combat} color="orange" />
         </div>
       </ModalBody>
       <ModalFooter>
