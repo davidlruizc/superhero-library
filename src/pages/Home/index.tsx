@@ -17,15 +17,24 @@ const Home: React.FC = () => {
 
   const initialHeros = React.useCallback(() => {
     Promise.all([
-      FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
-      FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
-      // TODO: remove when development turns to end
-      // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
-      // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
-      // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
-      // FindSuperheroById(`${getRandomArbitrary(1, 737)}`),
+      FindSuperheroById(`${getRandomArbitrary(1, 731)}`),
+      FindSuperheroById(`${getRandomArbitrary(1, 731)}`),
+      FindSuperheroById(`${getRandomArbitrary(1, 731)}`),
+      FindSuperheroById(`${getRandomArbitrary(1, 731)}`),
+      FindSuperheroById(`${getRandomArbitrary(1, 731)}`),
+      FindSuperheroById(`${getRandomArbitrary(1, 731)}`),
     ])
       .then((response: any) => {
+        response.sort((a: any, b: any) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+
         dispatch(setSuperhero(response));
       })
       .catch((error) => {

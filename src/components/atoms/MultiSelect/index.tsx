@@ -10,8 +10,8 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ label, children, ...props }) 
   return (
     <React.Fragment>
       <FormGroup>
-        <SelectLabel for="exampleSelect">{label}</SelectLabel>
-        <SelectInput {...props} type="select" name="select" id="exampleSelect">
+        <SelectLabel>{label}</SelectLabel>
+        <SelectInput {...props} type="select" name="select">
           {children}
         </SelectInput>
       </FormGroup>

@@ -5,12 +5,12 @@ import { ButtonText, ContentWrapper, CustomButton, IconWrapper } from './styles'
 interface ButtonStyledProps extends ButtonProps {
   text: string;
   icon?: string;
-  statusColor?: string;
+  statusButtonColor?: string;
 }
 
-const ButtonStyled: React.FC<ButtonStyledProps> = ({ text, icon, statusColor, ...rest }) => {
+const ButtonStyled: React.FC<ButtonStyledProps> = ({ text, icon, statusButtonColor, ...rest }) => {
   return (
-    <CustomButton {...rest} statusColor={statusColor}>
+    <CustomButton {...rest} statusButtonColor={statusButtonColor}>
       <ContentWrapper>
         {icon && (
           <IconWrapper>

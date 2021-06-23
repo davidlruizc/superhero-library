@@ -1,4 +1,5 @@
 import CardHero from 'components/atoms/Card';
+import SkeletonList from 'components/atoms/Skeleton';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Col, Row } from 'reactstrap';
@@ -13,21 +14,19 @@ const Feed: React.FC = () => {
       {hero.response ? (
         <Row>
           {hero.response.map((superhero) => (
-            <React.Fragment>
-              <Col sm="4" key={superhero.id}>
-                <CardHero
-                  image={superhero.image.url}
-                  name={superhero.name}
-                  work={superhero.work.occupation}
-                  appearance={superhero.appearance}
-                  powerstats={superhero.powerstats}
-                />
-              </Col>
-            </React.Fragment>
+            <Col sm="4" key={superhero.id}>
+              <CardHero
+                image={superhero.image.url}
+                name={superhero.name}
+                work={superhero.work.occupation}
+                appearance={superhero.appearance}
+                powerstats={superhero.powerstats}
+              />
+            </Col>
           ))}
         </Row>
       ) : (
-        <div>Loading...</div>
+        <SkeletonList />
       )}
     </FeedContainer>
   );
