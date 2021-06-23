@@ -2,7 +2,7 @@
 
 **src/components/atoms/ButtonStyled/index.tsx**
 
-### 1. ButtonStyled
+#### 1. ButtonStyled
 
 ButtonStyled componente UI personalizado referente a un botón con la posibilidad de agregar un icono.
 
@@ -21,7 +21,7 @@ Uso:
 
 **src/components/atoms/Card/index.tsx**
 
-### 1. CardHero
+#### 1. CardHero
 
 CardHero muestra la portada inicial del superheroe: Foto, Nombre, ocupación.
 En caso de que la imagen no sea cargada muestra una alternativa por defecto.
@@ -48,7 +48,7 @@ Uso:
 
 **src/components/atoms/ModalHero/index.tsx**
 
-### 1. ModalHero
+#### 1. ModalHero
 
 ModalHero componente modal que muestra la información de apariencia y habilidades del personaje.
 El componente verifica que la infomación recibida por el servicio se user friendly en caso contrario muestra que el dato del personaje es desconocido.
@@ -77,7 +77,7 @@ Uso:
 
 **src/components/atoms/MultiSelect/index.tsx**
 
-### 1. MultiSelect
+#### 1. MultiSelect
 
 MultiSelect es un componente personalizado basado en select option
 
@@ -100,7 +100,7 @@ Uso:
 
 **src/components/atoms/ProgressBar/index.tsx**
 
-### 1. ProgressBar
+#### 1. ProgressBar
 
 ProgressBar muestra una gráfica por habilidad
 
@@ -117,7 +117,7 @@ Uso:
 
 **src/components/atoms/Skeleton/index.tsx**
 
-### 1. SkeletonList
+#### 1. SkeletonList
 
 SkeletonList es un componente UI que muestra una lista de ejemplo como Loading mientras se realiza la petición del servicio.
 
@@ -131,7 +131,7 @@ Uso:
 
 **src/components/molecules/Content/index.tsx**
 
-### 1. Content
+#### 1. Content
 
 Content layout permite anidar el componente padre con el diseño base, como fondo.
 
@@ -147,7 +147,7 @@ Uso:
 
 **src/components/molecules/Feed/index.tsx**
 
-### 1. Feed
+#### 1. Feed
 
 Feed se encarga de renderear la lista de heroes almacenadas en el reducer `superheroReducer`
 
@@ -161,7 +161,7 @@ Uso:
 
 **src/components/molecules/Filter/index.tsx**
 
-### 1. Filter
+#### 1. Filter
 
 Filter se encarga de mostar los selects para que el usuario pueda escoger su opción a filtar.
 
@@ -178,7 +178,7 @@ Uso:
 
 **src/pages/Home/index.tsx**
 
-### 1. Home
+#### 1. Home
 
 Componente Home padre y pantalla inicial de la SPA.
 Se encarga de listar los superheroes iniciales sin ningún dato de busqueda previamente usado.
