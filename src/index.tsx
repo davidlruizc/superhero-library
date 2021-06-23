@@ -9,11 +9,18 @@ import 'assets/icons/nucleo/css/nucleo.css';
 import 'assets/icons/font-awesome/css/font-awesome.min.css';
 import 'assets/styles/argon-dashboard-react.css';
 import Home from 'pages/Home';
+import { createStore } from 'redux';
+import rootReducer from 'states';
+import { Provider } from 'react-redux';
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <Home />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
